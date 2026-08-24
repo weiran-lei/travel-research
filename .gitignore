@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+
+# Keep private and local test material out of version control.
+tests/fixtures/private/
+tests/actual/

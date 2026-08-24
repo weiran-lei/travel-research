@@ -1,0 +1,28 @@
+{
+  "version": "0.4",
+  "group_by": "location",
+  "location_hierarchy": [
+    "country",
+    "destination",
+    "place"
+  ],
+  "extract": [
+    "recommendation",
+    "transport",
+    "best_time",
+    "duration",
+    "route",
+    "warning",
+    "ticket"
+  ],
+  "custom_categories": [],
+  "consolidation": "balanced",
+  "sources": {
+    "display": "full"
+  },
+  "output": [
+    "markdown",
+    "json"
+  ],
+  "language": "match_user"
+}

@@ -1,0 +1,448 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Travel Research Extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "categoryList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "extracted": {
+          "$ref": "#/$defs/categoryList"
+        },
+        "partial": {
+          "$ref": "#/$defs/categoryList"
+        },
+        "not_found": {
+          "$ref": "#/$defs/categoryList"
+        }
+      },
+      "required": [
+        "extracted",
+        "partial",
+        "not_found"
+      ]
+    },
+    "information": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "extracted",
+            "partial"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "limitation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "category",
+        "status",
+        "statement",
+        "sources"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "partial"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "limitation": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "limitation"
+            ]
+          }
+        }
+      ]
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "statement",
+              "sources"
+            ]
+          }
+        }
+      },
+      "required": [
+        "category",
+        "topic",
+        "options"
+      ]
+    },
+    "informationList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/information"
+      }
+    },
+    "conflictList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflict"
+      }
+    }
+  },
+  "properties": {
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "group_by": {
+          "enum": [
+            "location",
+            "information_type",
+            "custom"
+          ]
+        },
+        "location_hierarchy": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "extract": {
+          "$ref": "#/$defs/categoryList"
+        },
+        "consolidation": {
+          "enum": [
+            "conservative",
+            "balanced",
+            "concise"
+          ]
+        },
+        "custom_categories": {
+          "$ref": "#/$defs/categoryList"
+        },
+        "sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "display": {
+              "enum": [
+                "full",
+                "count",
+                "hidden"
+              ]
+            }
+          },
+          "required": [
+            "display"
+          ]
+        },
+        "output": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "version",
+        "group_by",
+        "location_hierarchy",
+        "extract",
+        "custom_categories",
+        "consolidation",
+        "sources",
+        "output",
+        "language"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sources_received": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources_processed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources_partial": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources_unreadable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "destinations_found": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "places_found": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "knowledge_items": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "sources_received",
+        "sources_processed",
+        "sources_partial",
+        "sources_unreadable",
+        "destinations_found",
+        "places_found",
+        "knowledge_items"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "processed",
+              "partial",
+              "unreadable"
+            ]
+          },
+          "limitation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "status"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "partial",
+                    "unreadable"
+                  ]
+                }
+              },
+              "required": [
+                "status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "limitation": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "limitation"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "$ref": "#/$defs/coverage"
+    },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "destination": {
+            "type": "string",
+            "minLength": 1
+          },
+          "information": {
+            "$ref": "#/$defs/informationList"
+          },
+          "coverage": {
+            "$ref": "#/$defs/coverage"
+          },
+          "conflicts": {
+            "$ref": "#/$defs/conflictList"
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "information": {
+                  "$ref": "#/$defs/informationList"
+                },
+                "coverage": {
+                  "$ref": "#/$defs/coverage"
+                },
+                "conflicts": {
+                  "$ref": "#/$defs/conflictList"
+                }
+              },
+              "required": [
+                "name",
+                "information",
+                "coverage",
+                "conflicts"
+              ]
+            }
+          }
+        },
+        "required": [
+          "country",
+          "destination",
+          "information",
+          "coverage",
+          "conflicts",
+          "places"
+        ]
+      }
+    },
+    "unconfirmed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "sources",
+          "statement",
+          "reason"
+        ]
+      }
+    }
+  },
+  "required": [
+    "configuration",
+    "summary",
+    "sources",
+    "coverage",
+    "destinations",
+    "unconfirmed"
+  ]
+}
