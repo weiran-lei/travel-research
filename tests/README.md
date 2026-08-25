@@ -4,7 +4,7 @@ Test observable extraction behavior rather than exact prose.
 
 ## Minimum fixture
 
-Use synthetic, licensed, or explicitly approved images that collectively contain:
+Use local synthetic, licensed, or explicitly approved images that collectively contain:
 
 1. Multiple places and atomic facts in one image.
 2. Compatible duplicate advice across distinct sources.
@@ -14,7 +14,9 @@ Use synthetic, licensed, or explicitly approved images that collectively contain
 6. At least one configured category with no supporting evidence.
 7. One uncertain place identity for the `unconfirmed` section.
 
-Do not commit personal screenshots under `tests/fixtures/private/`.
+All files under `tests/fixtures/` are local-only and ignored by Git. Do not force-add
+test images or other source material to the repository. Only the `.gitkeep` placeholder
+is tracked.
 
 ## Invariants
 

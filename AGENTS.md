@@ -12,6 +12,6 @@
   4. Commit all intended repository changes with a descriptive message.
   5. Pull/rebase if the remote advanced, resolve only well-understood conflicts, then push to `origin/main`.
   6. Report the pushed commit hash and any remaining uncommitted or untracked files.
-- Never commit personal or private travel screenshots unless the user explicitly approves them.
+- Never commit test images or source material. Keep them under the Git-ignored
+  `tests/fixtures/` directory and never force-add them.
 - Do not install the skill merely to edit or review it; installation requires a separate user request.
-

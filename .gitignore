@@ -1,6 +1,7 @@
 .DS_Store
 *.log
 
-# Keep private and local test material out of version control.
-tests/fixtures/private/
+# Keep all local test source material out of version control.
+tests/fixtures/**
+!tests/fixtures/.gitkeep
 tests/actual/
