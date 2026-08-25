@@ -5,14 +5,14 @@ Turn supplied travel screenshots and images into structured, source-traceable re
 The skill can:
 
 1. Read batches in which one image contains many facts or places.
-2. Organize place-specific and destination-wide information.
+2. Organize place-specific, destination-wide, and country-wide information without inventing geographic entities.
 3. Extract only configured travel categories.
 4. Consolidate compatible repetition without erasing qualifiers.
 5. Preserve incompatible opinions with sources attached to each option.
 6. Report extracted, partially extracted, and missing categories.
 7. Report partially readable or unreadable source images.
 8. Produce a concise reader-facing result by default, with canonical geographic JSON available on request.
-9. Link every source by its original filename and optionally show the exact original excerpt beside the extracted result.
+9. Keep every source's original filename as its stable ID and visible label, with an optional locator for opening the original when the host provides one.
 
 ## First use
 
@@ -32,7 +32,9 @@ Configuration is never claimed to be saved unless it is actually persisted to an
 - coverage and missing categories checked internally but hidden by default
 - output language matching the user's extraction request
 
-Reader-facing output may use location, information-type, or a custom presentation. It shows only useful extracted information, not empty categories or internal coverage tables. JSON always retains one stable geographic structure and can represent destination-wide facts as well as places.
+Reader-facing output may use location, information-type, or a custom presentation. It shows only useful extracted information, not empty categories or internal coverage tables. JSON retains the existing destination structure and can additionally represent country-wide facts in the optional `country_information` collection.
+
+The optional source `locator` may contain a stable usable path or URI supplied by the host. It never replaces the original filename ID, is omitted when unavailable, and must not be created by copying or persisting source images.
 
 ## Reliability and scope
 

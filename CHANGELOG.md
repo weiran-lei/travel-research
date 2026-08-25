@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8 — 2026-08-25
+
+- Added an optional source `locator` while retaining the original filename as the stable ID and visible label.
+- Added optional `country_information` for country-wide travel facts without changing the existing destination model.
+- Preserved the v0.7 reader-facing sequence: structured information, original text, and source link.
+- Kept source images external; no copying or persistence is required to create locators.
+
 ## 0.7 — 2026-08-25
 
 - Added a low-friction onboarding fallback for agents without native selectable controls.

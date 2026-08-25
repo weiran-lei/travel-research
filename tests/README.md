@@ -11,8 +11,9 @@ Use local synthetic, licensed, or explicitly approved images that collectively c
 3. Two incompatible opinions about the same place and category.
 4. A partially obscured fact with a clear limitation.
 5. A destination-wide fact that must not be assigned to a fake place.
-6. At least one configured category with no supporting evidence.
-7. One uncertain place identity for the `unconfirmed` section.
+6. A country-wide fact, such as national rail-pass guidance, that must not be assigned to a destination or place.
+7. At least one configured category with no supporting evidence.
+8. One uncertain place identity for the `unconfirmed` section.
 
 All files under `tests/fixtures/` are local-only and ignored by Git. Do not force-add
 test images or other source material to the repository. Only the `.gitkeep` placeholder
@@ -21,11 +22,16 @@ is tracked.
 ## Invariants
 
 - Every supplied source appears in the source registry.
+- Each source ID and visible label remains its full original filename.
+- A stable host-provided path or URI is stored only in the optional `locator`; sources without one remain valid and are shown as plain filenames.
+- Extraction never copies or persists source images to manufacture a locator.
 - Every emitted source reference resolves to a registered source identifier.
 - Compatible duplicates consolidate without losing supporting sources.
 - Conflicting options remain separate and retain option-specific sources.
 - Partial statements explain their limitation.
-- Every configured category has exactly one coverage state per place and destination aggregate.
+- Country-wide facts are stored in `country_information` and are not duplicated across destinations or assigned to a fabricated destination or place.
+- Existing destination-only output remains valid when `country_information` is absent.
+- Every configured category has exactly one coverage state per represented country aggregate, destination aggregate, and place.
 - Missing categories are reported without fabricated values.
 - Reader-facing output omits coverage, missing categories, empty sections, and JSON unless requested.
 - Every visible conclusion uses a full original filename and, when configured, the smallest sufficient original-text excerpt.

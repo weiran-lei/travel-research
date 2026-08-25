@@ -19,6 +19,16 @@ Use the selected location, information-type, or custom organization. Under locat
 ```markdown
 # [Country or Country unconfirmed]
 
+## Country-wide information (only when present)
+
+### [Category]
+[Direct, consolidated result]
+
+原文：
+> [smallest sufficient verbatim excerpt]
+
+来源：[original-filename.ext]([registered locator])
+
 ## [Destination / City / Region]
 
 ### [Place or destination-wide topic]
@@ -29,10 +39,10 @@ Use the selected location, information-type, or custom organization. Under locat
 原文：
 > [smallest sufficient verbatim excerpt]
 
-来源：[original-filename.ext](/absolute/or/usable/path/original-filename.ext)
+来源：[original-filename.ext]([registered locator])
 ```
 
-Local-file links must use the actual usable path and retain the full original filename as their label. If no usable path is available, show the full filename as plain text. Never replace filenames with “Image 1” or another anonymous number.
+Links must use the source registry's `locator` and retain the full original filename as their label. If no locator is registered, show the full filename as plain text. Never replace filenames with “Image 1” or another anonymous number.
 
 Do not use HTML disclosure or collapsible elements. Do not add a second extraction explanation after the result: the structured result already is the extraction.
 

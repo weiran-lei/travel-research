@@ -32,12 +32,13 @@ Use a small batch containing:
 - directly conflicting advice;
 - partially cropped or obscured text;
 - a destination-wide fact;
+- a country-wide fact;
 - configured categories that are not present.
 
 Expected behavior is documented in [tests/README.md](tests/README.md). Do not commit personal screenshots or source material without permission.
 
 ## Current version
 
-`0.7` — native selectable onboarding where supported; agents without controls offer one-click-equivalent recommended setup before any numbered customization.
+`0.8` — optional source locators and country-wide information, with the v0.7 reader-facing behavior preserved.
 
 No license has been selected yet. Copyright remains with the repository owner unless a license is added.
