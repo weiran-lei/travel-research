@@ -38,6 +38,6 @@ Expected behavior is documented in [tests/README.md](tests/README.md). Do not co
 
 ## Current version
 
-`0.5` — step-by-step configuration, clickable original filenames, original-text evidence, and reader-first output with JSON and coverage hidden by default.
+`0.6` — native selectable onboarding where supported, plus a simpler reader format: structured information, original text, and clickable source.
 
 No license has been selected yet. Copyright remains with the repository owner unless a license is added.

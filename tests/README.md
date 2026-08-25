@@ -30,6 +30,10 @@ is tracked.
 - Reader-facing output omits coverage, missing categories, empty sections, and JSON unless requested.
 - Every visible conclusion uses a full original filename and, when configured, the smallest sufficient original-text excerpt.
 - Clickable source labels retain the original filename rather than anonymous numbering.
+- Onboarding uses a callable structured-choice tool before falling back to numbered text.
+- Free-form configuration input is reserved for other/custom choices.
+- Reader-facing output contains no HTML disclosure elements or redundant extraction block.
+- Evidence is organized as structured information followed by original text and source.
 - Reader-facing output and JSON, when both requested, use the configured language and convey the same facts.
 - The result contains no itinerary, web-derived completion, live data, or booking action.
 

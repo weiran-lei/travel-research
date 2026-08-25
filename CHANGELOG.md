@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6 — 2026-08-25
+
+- Prioritized native structured-choice tools for onboarding in Codex, Claude Code, and other capable agents.
+- Reserved numbered replies for hosts without a callable choice tool and free-form input for other/custom answers.
+- Removed unsupported HTML disclosure elements from reader-facing output.
+- Simplified evidence presentation to structured information followed by original text and source.
+- Removed the redundant post-evidence `extracted` explanation.
+
 ## 0.5 — 2026-08-25
 
 - Replaced the blanket first-run confirmation with one configuration question at a time.

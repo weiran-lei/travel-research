@@ -26,30 +26,22 @@ Use the selected location, information-type, or custom organization. Under locat
 #### [Category]
 [Direct, consolidated result]
 
-来源：[original-filename.ext](/absolute/or/usable/path/original-filename.ext)
-
-<details>
-<summary>原文对照</summary>
-
 原文：
 > [smallest sufficient verbatim excerpt]
 
-提取：
-- [normalized fact]
-- [retained condition or qualifier]
-
-</details>
+来源：[original-filename.ext](/absolute/or/usable/path/original-filename.ext)
 ```
 
 Local-file links must use the actual usable path and retain the full original filename as their label. If no usable path is available, show the full filename as plain text. Never replace filenames with “Image 1” or another anonymous number.
 
-If collapsible details are unsuitable or unsupported, present a compact `原文 / 提取` block instead.
+Do not use HTML disclosure or collapsible elements. Do not add a second extraction explanation after the result: the structured result already is the extraction.
 
 ## Evidence mapping
 
 - Quote only the smallest excerpt needed to verify the extracted statement; do not transcribe an entire screenshot when a sentence or phrase is sufficient.
 - Keep wording faithful. Use an ellipsis only to mark omitted surrounding text, never to join fragments into a new meaning.
-- Place each excerpt immediately after the conclusion it supports.
+- Place each excerpt immediately after the structured information it supports, then show its source link.
+- Group compatible facts under one useful topic, followed by their original excerpts and sources; do not create a separate evidence block for every sentence when the same excerpt supports the group.
 - If multiple sources support one conclusion, list each clickable filename and give each source its own excerpt when the wording materially differs.
 - For facts spanning consecutive cropped screenshots, cite both files and state the cropping limitation once.
 - Preserve original spelling in excerpts. Normalize place names, capitalization, units, and categories only in the extracted result.
@@ -77,4 +69,3 @@ Show limitations only when they affect interpretation. Use natural language such
 `原图底部被裁切，后续路线说明可能不完整。`
 
 Do not expose `partial`, `not_found`, coverage tables, empty headings, placeholder statements, or lists of absent categories in the default reading output. If the user asks for completeness or coverage, translate the internal coverage check into a concise human-readable audit.
-

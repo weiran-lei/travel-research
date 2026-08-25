@@ -21,7 +21,7 @@ Turn supplied travel screenshots and images into concise, source-traceable resea
 
 Use a configuration supplied by the user or clearly available for this task. Otherwise, read and follow [references/onboarding.md](references/onboarding.md). Ask one configuration question at a time.
 
-For an existing version 0.4 configuration, preserve its choices and apply these version 0.5 presentation defaults unless the user chooses otherwise:
+For an existing version 0.4 or 0.5 configuration, preserve its choices and apply these version 0.6 presentation defaults unless the user chooses otherwise:
 
 - clickable original filenames;
 - original-text comparison;
@@ -49,6 +49,7 @@ Default behavior:
 - Preserve subjectivity when it matters, such as “the author preferred…” or “the author waited about 20 minutes.”
 - Display every source using its full original filename as a clickable local-file link when a usable path is available.
 - Pair each conclusion with the smallest sufficient original excerpt so the user can compare what was written with what was extracted.
+- Present reader-facing evidence in this order: structured information, `原文`, clickable source. Do not add HTML disclosure tags or a second explanation of what was extracted.
 - Do not display JSON, coverage tables, empty categories, or lists of missing categories unless the user requests them.
 - Surface a source limitation only when cropping, obscurity, ambiguity, or unreadability affects interpretation.
 

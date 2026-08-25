@@ -16,7 +16,7 @@ The skill can:
 
 ## First use
 
-If no configuration is supplied or clearly available, the skill asks one configuration question at a time: language, organization, categories, duplicate handling, source/evidence display, and output format. Choices apply to the current batch unless the user explicitly asks to save them.
+If no configuration is supplied or clearly available, the skill asks one configuration question at a time: language, organization, categories, duplicate handling, source/evidence display, and output format. It uses the agent's native selectable clarification tool when available; numbered answers are only a fallback. Choices apply to the current batch unless the user explicitly asks to save them.
 
 Configuration is never claimed to be saved unless it is actually persisted to an authorized location.
 
