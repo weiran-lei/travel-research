@@ -9,11 +9,31 @@ Use structured, selectable clarification whenever the host exposes it. Resolve t
 1. Codex: call `request_user_input` when it is available in the current mode.
 2. Claude Code: call `AskUserQuestion` with the available options.
 3. Other agents: use the host's equivalent structured choice or button tool when available.
-4. Only when no structured choice mechanism is callable, present a short numbered list and accept a number.
+4. When no structured choice mechanism is callable, do not run the full numbered wizard immediately. Offer the recommended configuration once and let the user either accept it or enter customization.
 
 Do not ask the user to type the full label of a standard choice. Free-form input is only the fallback for `Other`, `Custom`, or a clarification that cannot be represented by the offered options.
 
 Keep each selectable question within the host tool's option limit. If a host allows only two or three choices, put the recommended mainstream choices in the control and let its built-in `Other` option handle the rest.
+
+## Fallback without selectable controls
+
+When no structured choice tool is callable, show this compact recommended configuration in the language of the request:
+
+- language: match the extraction request;
+- organization: Country → City/Region → Place;
+- categories: recommendations, transport, best time, duration, route, warnings/tips, and tickets;
+- repetition: balanced consolidation;
+- evidence: clickable original filenames plus original text;
+- output: reader-facing output only.
+
+Then ask only:
+
+1. Use the recommended configuration
+2. Customize
+
+If the user chooses the recommended configuration, summarize it briefly and begin extraction. Do not ask the six individual questions.
+
+If the user chooses customization, run the questions below one at a time as short numbered choices. Accept a number instead of requiring the full label.
 
 Do not ask about a choice the user has already made. A language used in casual conversation is not a durable preference, but `match_user` may use the language of the current extraction request for this batch.
 

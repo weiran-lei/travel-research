@@ -38,6 +38,6 @@ Expected behavior is documented in [tests/README.md](tests/README.md). Do not co
 
 ## Current version
 
-`0.6` — native selectable onboarding where supported, plus a simpler reader format: structured information, original text, and clickable source.
+`0.7` — native selectable onboarding where supported; agents without controls offer one-click-equivalent recommended setup before any numbered customization.
 
 No license has been selected yet. Copyright remains with the repository owner unless a license is added.

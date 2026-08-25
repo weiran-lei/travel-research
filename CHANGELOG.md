@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7 — 2026-08-25
+
+- Added a low-friction onboarding fallback for agents without native selectable controls.
+- Let users accept the complete recommended configuration with one reply.
+- Run the numbered question-by-question wizard only when the user chooses customization.
+
 ## 0.6 — 2026-08-25
 
 - Prioritized native structured-choice tools for onboarding in Codex, Claude Code, and other capable agents.

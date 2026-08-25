@@ -21,7 +21,7 @@ Turn supplied travel screenshots and images into concise, source-traceable resea
 
 Use a configuration supplied by the user or clearly available for this task. Otherwise, read and follow [references/onboarding.md](references/onboarding.md). Ask one configuration question at a time.
 
-For an existing version 0.4 or 0.5 configuration, preserve its choices and apply these version 0.6 presentation defaults unless the user chooses otherwise:
+For an existing version 0.4–0.6 configuration, preserve its choices and apply these version 0.7 presentation defaults unless the user chooses otherwise:
 
 - clickable original filenames;
 - original-text comparison;

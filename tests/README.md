@@ -32,6 +32,8 @@ is tracked.
 - Clickable source labels retain the original filename rather than anonymous numbering.
 - Onboarding uses a callable structured-choice tool before falling back to numbered text.
 - Free-form configuration input is reserved for other/custom choices.
+- Without a callable choice tool, onboarding offers the complete recommended configuration once and asks only whether to use it or customize it.
+- Accepting the fallback recommendation skips all six individual configuration questions.
 - Reader-facing output contains no HTML disclosure elements or redundant extraction block.
 - Evidence is organized as structured information followed by original text and source.
 - Reader-facing output and JSON, when both requested, use the configured language and convey the same facts.
