@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5 — 2026-08-25
+
+- Replaced the blanket first-run confirmation with one configuration question at a time.
+- Made reader-facing Markdown the default and JSON an explicit opt-in.
+- Added clickable source links that retain complete original filenames.
+- Added original-text excerpts beside normalized extracted facts.
+- Hid coverage, missing categories, empty sections, and internal metrics from the default reading output.
+- Replaced repetitive source-preface wording with direct facts while preserving attribution for opinions and personal experiences.
+- Split onboarding and reader-output details into focused references.
+
 ## 0.4 — 2026-08-25
 
 - Added language selection at the beginning of first-run configuration.

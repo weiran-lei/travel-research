@@ -1,5 +1,5 @@
 {
-  "version": "0.4",
+  "version": "0.5",
   "group_by": "location",
   "location_hierarchy": [
     "country",
@@ -18,11 +18,13 @@
   "custom_categories": [],
   "consolidation": "balanced",
   "sources": {
-    "display": "full"
+    "display": "linked",
+    "evidence": "original_and_extracted"
   },
   "output": [
-    "markdown",
-    "json"
+    "markdown"
   ],
+  "show_coverage": false,
+  "show_missing": false,
   "language": "match_user"
 }

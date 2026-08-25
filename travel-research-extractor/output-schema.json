@@ -203,12 +203,21 @@
               "enum": [
                 "full",
                 "count",
-                "hidden"
+                "hidden",
+                "linked"
+              ]
+            },
+            "evidence": {
+              "enum": [
+                "original_and_extracted",
+                "source_only",
+                "none"
               ]
             }
           },
           "required": [
-            "display"
+            "display",
+            "evidence"
           ]
         },
         "output": {
@@ -219,6 +228,12 @@
           },
           "minItems": 1,
           "uniqueItems": true
+        },
+        "show_coverage": {
+          "type": "boolean"
+        },
+        "show_missing": {
+          "type": "boolean"
         },
         "language": {
           "type": "string",
@@ -234,6 +249,8 @@
         "consolidation",
         "sources",
         "output",
+        "show_coverage",
+        "show_missing",
         "language"
       ]
     },

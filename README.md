@@ -38,6 +38,6 @@ Expected behavior is documented in [tests/README.md](tests/README.md). Do not co
 
 ## Current version
 
-`0.4` — language selection occurs at the beginning of first-run configuration.
+`0.5` — step-by-step configuration, clickable original filenames, original-text evidence, and reader-first output with JSON and coverage hidden by default.
 
 No license has been selected yet. Copyright remains with the repository owner unless a license is added.

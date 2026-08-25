@@ -11,11 +11,12 @@ The skill can:
 5. Preserve incompatible opinions with sources attached to each option.
 6. Report extracted, partially extracted, and missing categories.
 7. Report partially readable or unreadable source images.
-8. Produce Markdown and/or canonical geographic JSON.
+8. Produce a concise reader-facing result by default, with canonical geographic JSON available on request.
+9. Link every source by its original filename and optionally show the exact original excerpt beside the extracted result.
 
 ## First use
 
-If no configuration is supplied or clearly available, the skill first establishes the output language. The recommended setting is `match_user`; Chinese, English, bilingual, and custom-language output are also supported. It then offers concise extraction defaults. The user may accept them for the current batch or customize organization, categories, consolidation, Markdown source display, and output format.
+If no configuration is supplied or clearly available, the skill asks one configuration question at a time: language, organization, categories, duplicate handling, source/evidence display, and output format. Choices apply to the current batch unless the user explicitly asks to save them.
 
 Configuration is never claimed to be saved unless it is actually persisted to an authorized location.
 
@@ -25,12 +26,13 @@ Configuration is never claimed to be saved unless it is actually persisted to an
 - recommendations, transport, best time, duration, route, warnings/tips, tickets
 - balanced consolidation
 - separate preservation of conflicting opinions
-- mandatory conflict preservation, coverage reporting, and structured source relationships
-- full source references
-- Markdown + JSON
+- mandatory conflict preservation, internal coverage checking, and structured source relationships
+- clickable original filenames with original-text comparison
+- reader-facing Markdown; JSON only when requested
+- coverage and missing categories checked internally but hidden by default
 - output language matching the user's extraction request
 
-Markdown may use location, information-type, or a custom presentation. JSON always retains one stable geographic structure and can represent destination-wide facts as well as places.
+Reader-facing output may use location, information-type, or a custom presentation. It shows only useful extracted information, not empty categories or internal coverage tables. JSON always retains one stable geographic structure and can represent destination-wide facts as well as places.
 
 ## Reliability and scope
 
